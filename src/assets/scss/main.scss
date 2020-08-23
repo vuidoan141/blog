@@ -1,0 +1,19 @@
+@import './abstracts/variable';
+@import './abstracts/mixin';
+@import './layout/navigation';
+@import './components/loader';
+@import './components/blog';
+
+html, body, #root, .App {margin:0;padding:0;height:100%;}
+
+body{
+  background-color: #f8f9fa!important;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}

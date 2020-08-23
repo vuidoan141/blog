@@ -1,0 +1,121 @@
+.top-navigation {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  transition: 0.3s;
+  &.scrolled {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a.logo {
+      display: inline-block;
+      line-height: 70px;
+      cursor: pointer;
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+      ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        li {
+          a {
+            line-height: 70px;
+            padding: 0 20px;
+            display: inline-block;
+            color: $text-color;
+            &:hover {
+              color: $text-link;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      img {
+        height: 50px;
+        cursor: pointer;
+      }
+    }
+    .nav-icon {
+      display: none;
+      margin: 1em;
+      width: 30px;
+      cursor: pointer;
+      
+      &:after,
+      &:before,
+      & div {
+        background-color: grey;
+        border-radius: 3px;
+        content: '';
+        display: block;
+        height: 3px;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+      }
+      &.active:before {
+        transform: translateY(8px) rotate(135deg);
+      }
+
+      &.active:after {
+        transform: translateY(-8px) rotate(-135deg);
+      }
+
+      &.active div {
+        transform: scale(0);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-navigation {
+    .nav-container {
+      .nav-icon {
+        display: block;
+      }
+    }
+    .menu {
+      position: absolute;
+      top: 70px;
+      left: -300px;
+      width: 300px;
+
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      align-items: flex-start !important;
+      height: calc(100vh - 70px);
+
+      background-color: white;
+
+      overflow: hidden;
+      transition: 300ms ease left;
+
+      ul {
+        flex-direction: column;
+        padding: 0;
+        align-items: flex-start !important;
+      }
+
+      img {
+        align-self: center;
+      }
+
+      &.active {
+        left: 0;
+      }
+    }
+  }
+}
