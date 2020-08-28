@@ -17,9 +17,7 @@ class ApiService {
   }
 
   get(path, config) {
-    console.log('XXXX', path);
     return this.client.get(path, config).then(response => {
-      console.log('RRR', response);
       return response.data
     })
   }

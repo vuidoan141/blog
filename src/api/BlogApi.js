@@ -2,7 +2,8 @@
 import service from './ApiService';
 
 export function fetchBlogs() {
-  return service.get('/posts')
+  return Promise.reject("Error server")
+  // return service.get('/posts')
 }
 
 export function deleteBlog(id) {
