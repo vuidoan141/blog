@@ -5,6 +5,7 @@ import { setLoading } from '../loader/LoaderSlice';
 export const fetchBlogs = createAsyncThunk(
   'blog/getList',
   async (params, thunkAPI) => {
+    console.log(params);
       const blogs = await BlogApi.fetchBlogs();
       return blogs;
   }
